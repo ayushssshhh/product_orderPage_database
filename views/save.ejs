@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../public/css/style.css"> -->
+    <style>
+        body{
+            background-color: #1ec365;
+            font-family: sans-serif;
+        }
+
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .head{
+            height: 130px;
+        }
+
+        h1{
+            width: fit-content;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 100%;
+            font-size: 60px;
+            line-height: 60px;
+        }
+        p{
+            width: 200px;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            color: #1ec365;
+        }
+        input{
+            padding: 8px 18px;
+            border: none;
+            background-color:#ffffff;
+            border-radius: 9px;
+            color: #033017;
+            font-weight: 800;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        table{
+            margin-bottom: 30px;
+            border: solid white 7px;
+            color: #fff;
+        }
+
+        th ,  td{ 
+            border-left: solid white 2px;
+            border-bottom: solid white 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="head">
+            <h1>👍</h1>
+        </div>
+
+        <div class="para">
+            <p>Order Detailed Stored</p>
+        </div>
+
+        <table cellpadding = 8>
+            <tr>
+                <th>name</th>
+                <th>country</th>
+                <th>ethnicity</th>
+                <th>age</th>
+                <th>gender</th>
+                <th>size</th>
+            </tr>
+
+            <% orderRender.forEach((order)=>{ %>
+                <tr>
+                    <td><%= order.name %></td>
+                    <td><%= order.country %></td>
+                    <td><%= order.ethnicity %></td>
+                    <td><%= order.age %></td>
+                    <td><%= order.gender %></td>
+                    <td><%= order.size %></td>
+                </tr>
+            <% }) %>
+        </table>
+
+        <div class="form">
+            <form action="/save" method="post">
+                <input type="submit" value="Oroder Again"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<!-- body{
+    background-color: #1ec365;
+}
+
+.main{
+    position: absolute;
+    top : 50%;
+    left: 50%;
+    transform: translate(-20%,-50%);
+}
+
+
+h1{
+    padding: 40px;
+    background-color: #fff;
+    display: inline;
+    border-radius: 100%;
+    font-size: 60px;
+}
+p{
+    background-color: #ffffff;
+    display: inline;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    left: -170px;
+    top:50px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #1ec365;
+}
+input{
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    padding: 8px 18px;
+    border: none;
+    background-color:#ffffff;
+    border-radius: 9px;
+    color: #033017;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+} -->
